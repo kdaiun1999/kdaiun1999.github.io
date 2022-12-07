@@ -6,7 +6,7 @@
     <content><![CDATA[<p>​        这里记录着自学的Java基础知识，以及自己的深入理解</p>
 <span id="more"></span>
 
-<table>
+<h1 id="符号"><a href="#符号" class="headerlink" title="符号"></a>符号</h1><table>
 <thead>
 <tr>
 <th align="left">类别</th>
@@ -315,7 +315,7 @@
 <p>参考：<a href="https://blog.csdn.net/kennethf6986/article/details/83771134">https://blog.csdn.net/kennethf6986/article/details/83771134</a></p>
 <h2 id="3-2-非访问修饰符"><a href="#3-2-非访问修饰符" class="headerlink" title="3.2 非访问修饰符"></a>3.2 非访问修饰符</h2><h3 id="3-2-1-static"><a href="#3-2-1-static" class="headerlink" title="3.2.1 static"></a>3.2.1 static</h3><p><strong>修饰类方法和类变量、静态代码块</strong></p>
 <p>当我们的类首次被加载的时候，会将静态的变量加载到数据区的方法区，所有创建的实例对象都共享这个变量，它属于一个静态的公共资源，我们可以直接通过类名.变量名对其进行访问，也可以通过对象名.变量名对其进行访问。类首次加载的时候，静态资源加载比构造函数还要先一步，这里的步骤是：加载静态资源—&gt;访问构造函数。</p>
-<h6 id="1-修饰类变量："><a href="#1-修饰类变量：" class="headerlink" title="1. 修饰类变量："></a>1. 修饰类变量：</h6><p>我们可以在类中定义static类变量，如下：</p>
+<h4 id="1-修饰类变量："><a href="#1-修饰类变量：" class="headerlink" title="1. 修饰类变量："></a>1. 修饰类变量：</h4><p>我们可以在类中定义static类变量，如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="variable">age</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">	Test(i) &#123;</span><br><span class="line">		age = age + i;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>这就定义了一个静态的变量，当我们首次创建这个类对象的时候，它会先被加载到数据区的方法区（公共的静态资源区域，可以被该类、该类创建的对象共同访问，且数据共享）。</p>
@@ -323,16 +323,26 @@
 <p>以上面的例子来说：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo</span> &#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">11</span>;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		<span class="comment">// 创建对象，加载age到方法区，再执行构造函数</span></span><br><span class="line">		<span class="type">Test</span> <span class="variable">test1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Test</span>(<span class="number">1</span>);</span><br><span class="line">		System.out.println(test1.age);	<span class="comment">// 输出结果为11</span></span><br><span class="line">		<span class="comment">// 创建对象，执行构造函数</span></span><br><span class="line">		<span class="type">Test</span> <span class="variable">test2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Test</span>(<span class="number">2</span>);		<span class="comment">// 上面age结果11，这里加2</span></span><br><span class="line">		System.out.println(test2.age);	<span class="comment">// 输出结果为13</span></span><br><span class="line">		<span class="comment">//	创建对象，执行构造函数</span></span><br><span class="line">		<span class="type">Tets</span> <span class="variable">test3</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Test</span>(<span class="number">3</span>);		<span class="comment">// 上面age结果13，这里加3</span></span><br><span class="line">		System.out.println(test3.age);	<span class="comment">// 输出结果为16</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h6 id="2-修饰类方法："><a href="#2-修饰类方法：" class="headerlink" title="2. 修饰类方法："></a>2. 修饰类方法：</h6><p>我们可以在类中定义static方法，如下：</p>
+<h4 id="2-修饰类方法："><a href="#2-修饰类方法：" class="headerlink" title="2. 修饰类方法："></a>2. 修饰类方法：</h4><p>我们可以在类中定义static方法，如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class People &#123;</span><br><span class="line">	public int virtualAge = 11;</span><br><span class="line">	public static int realAge = 10;</span><br><span class="line">	public static void getAge() &#123;</span><br><span class="line">		System.out.println(virtualAge);	// 报错，因为static方法不能使用this</span><br><span class="line">		System.out.println(realAge);</span><br><span class="line">    &#125;</span><br><span class="line">    public void getAge1() &#123;</span><br><span class="line">    	System.out.println(this.virtualAge);</span><br><span class="line">    	System.out.println(realAge);</span><br><span class="line">    	System.out.println(this.realAge);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>可以看出static修饰的方法不能够使用this指向当前类，只能够调用静态变量，不能访问实例变量。</p>
-<h6 id="3-静态代码块："><a href="#3-静态代码块：" class="headerlink" title="3. 静态代码块："></a>3. 静态代码块：</h6><p>同样地在类加载阶段会先去调用它。它和静态变量同级，谁在前先走谁。</p>
+<p><strong>问：我们为什么用static？</strong></p>
+<p>答：我们使用static修饰方法可以直接通过 类.方法 去调用方法，static可以理解成它被赋予在类上，而不是一个副本变量对象上了，我们不能通过this去访问当前类非static属性的变量和方法。</p>
+<h4 id="3-静态代码块："><a href="#3-静态代码块：" class="headerlink" title="3. 静态代码块："></a>3. 静态代码块：</h4><p>同样地在类加载阶段会先去调用它。它和静态变量同级，谁在前先走谁。</p>
 <p><strong>？？？？？？？？？？？？那我们可以用static来做什么呢？？？？？？？？？？？？？？？</strong></p>
 <p>场景1：我们需要记录创建的一个实例总数，我们就可以在类中定义一个static的变量count = 0，构造函数中写count++，表明当我们创建一个实例对象的时候数量就+1。</p>
 <p><strong>注意：</strong>同样地，我们的static静态代码块也不能够使用this指向当前类，不能访问实例变量，只能调用静态变量。</p>
+<h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4><blockquote>
+<p>1、static可以用来修饰类变量、类方法和类静态块</p>
+<p>2、初次调用类（静态变量、静态方法）或者创建该类对象（new Test()）时，它会加载类中的静态变量和静态块，静态方法不会被加载，只有当我们调用才会进入。这些加载的静态变量和静态块被存放在公共静态资源区域。</p>
+<p>3、静态变量我们通常用来作为全局使用的一个变量；静态方法我们通常用它做工具类方法。</p>
+<p>4、我们在静态方法中不能使用this去指向当前类对象获取非静态资源，如果要使用非静态资源就不能使用静态方法或者将非静态变量换成静态变量。</p>
+<p>5、构造方法只有在创建该类对象时才会去调用，但是初次创建会先调用静态变量和静态块。</p>
+<p>6、this的一点理解，我们的this是指向当前对象的，可以理解为这个副本，而非静态变量和非静态方法其实对应的是这个对象上的一个属性和行为，我们用this就可以获取到当前对象的这个属性和行为，而加了static就表明这不是个人使用的，是整个类的，是大家所共有的，所以规定成不能使用this指向，static修饰的变量和方法是可以直接通过类去访问的。</p>
+</blockquote>
 <h3 id="3-2-2-final"><a href="#3-2-2-final" class="headerlink" title="3.2.2 final"></a>3.2.2 final</h3><p><strong>修饰类变量和类方法</strong></p>
-<h6 id="1-修饰类变量"><a href="#1-修饰类变量" class="headerlink" title="1.修饰类变量"></a>1.修饰类变量</h6><p>用final修饰类变量，表示它不可被修改，且必须初始化值如下：</p>
+<h4 id="1-修饰类变量"><a href="#1-修饰类变量" class="headerlink" title="1.修饰类变量"></a>1.修饰类变量</h4><p>用final修饰类变量，表示它不可被修改，且必须初始化值如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class People &#123;</span><br><span class="line">	public static final int age = 18;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
