@@ -86,14 +86,14 @@
 <meta property="og:site_name" content="可乐鸡翅">
 <meta property="og:description" content="进程与线程前言：理论知识1、什么是进程线程？java运行程序之后，会先启动JVM，JVM就是一个进程。 JVM启动主线程调用main方法，同时再启动一个垃圾回收线程负责看护，回收线程（这两个线程并发） 2、进程和线程关系？不同进程：进程A和进程B 内存独立不共享 不同线程：线程A和线程B， 堆内存 和 方法区 内存共享，但是 栈内存 独立，一个线程一个栈，当开启N个线程时，会有N个栈空间，每个栈之">
 <meta property="og:locale">
-<meta property="og:image" content="d:/001_study_Java/01_Java基础/photo/String在栈和堆中的内存.png">
+<meta property="og:image" content="http://example.com/images/String%E5%9C%A8%E6%A0%88%E5%92%8C%E5%A0%86%E4%B8%AD%E7%9A%84%E5%86%85%E5%AD%98.png">
 <meta property="og:image" content="e:/typora/photo/image-20221117100655288.png">
 <meta property="og:image" content="e:/typora/photo/线程任务映射.jpg">
 <meta property="article:published_time" content="2022-12-14T06:14:46.721Z">
-<meta property="article:modified_time" content="2022-12-14T06:16:42.177Z">
+<meta property="article:modified_time" content="2022-12-14T06:25:01.199Z">
 <meta property="article:author" content="KD">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="d:/001_study_Java/01_Java基础/photo/String在栈和堆中的内存.png">
+<meta name="twitter:image" content="http://example.com/images/String%E5%9C%A8%E6%A0%88%E5%92%8C%E5%A0%86%E4%B8%AD%E7%9A%84%E5%86%85%E5%AD%98.png">
 
 
 
@@ -326,7 +326,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-12-14T14:16:42+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2022-12-14T14:25:01+08:00">
                 2022-12-14
               </time>
             
@@ -423,7 +423,7 @@
 <h4 id="2、进程和线程关系？"><a href="#2、进程和线程关系？" class="headerlink" title="2、进程和线程关系？"></a>2、进程和线程关系？</h4><p>不同进程：进程A和进程B <strong>内存独立不共享</strong></p>
 <p>不同线程：线程A和线程B， <strong>堆内存</strong> 和 <strong>方法区</strong> 内存共享，但是 <strong>栈内存</strong> 独立，一个线程一个栈，当开启N个线程时，会有N个栈空间，每个栈之间互补干扰，各自执行，这就是 <strong>多线程并发</strong></p>
 <h4 id="3、真正的多线程并发"><a href="#3、真正的多线程并发" class="headerlink" title="3、真正的多线程并发"></a>3、真正的多线程并发</h4><p>t1线程执行t1的，t2线程执行t2的。t1不会影响t2，t2也不会影响t1，这叫做真正的多线程并发。</p>
-<h4 id="4、线程对象的生命周期"><a href="#4、线程对象的生命周期" class="headerlink" title="4、线程对象的生命周期"></a>4、线程对象的生命周期</h4><p><img src="D:\001_study_Java\01_Java基础\photo\String在栈和堆中的内存.png" alt="在这里插入图片描述"></p>
+<h4 id="4、线程对象的生命周期"><a href="#4、线程对象的生命周期" class="headerlink" title="4、线程对象的生命周期"></a>4、线程对象的生命周期</h4><p><img src="/images/String%E5%9C%A8%E6%A0%88%E5%92%8C%E5%A0%86%E4%B8%AD%E7%9A%84%E5%86%85%E5%AD%98.png" alt="在这里插入图片描述"></p>
 <h5 id="4-1-新建状态"><a href="#4-1-新建状态" class="headerlink" title="4.1 新建状态"></a>4.1 新建状态</h5><h5 id="4-2-就绪状态"><a href="#4-2-就绪状态" class="headerlink" title="4.2 就绪状态"></a>4.2 就绪状态</h5><h5 id="4-3-运行状态"><a href="#4-3-运行状态" class="headerlink" title="4.3 运行状态"></a>4.3 运行状态</h5><h5 id="4-4-阻塞状态"><a href="#4-4-阻塞状态" class="headerlink" title="4.4 阻塞状态"></a>4.4 阻塞状态</h5><h5 id="4-5-死亡状态"><a href="#4-5-死亡状态" class="headerlink" title="4.5 死亡状态"></a>4.5 死亡状态</h5><h2 id="1-创建线程"><a href="#1-创建线程" class="headerlink" title="1.创建线程"></a>1.创建线程</h2><h4 id="1-1继承Thread类"><a href="#1-1继承Thread类" class="headerlink" title="1.1继承Thread类"></a>1.1继承Thread类</h4><p>创建一个新的类，继承Thread类，然后创建一个该类实例。</p>
 <p>继承必须重写run()方法，是新线程的入口点。必须调用start()方法才能执行。</p>
 <p>被之上也是实现Runnable接口的一个实例。</p>
