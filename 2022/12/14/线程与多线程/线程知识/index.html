@@ -86,14 +86,14 @@
 <meta property="og:site_name" content="可乐鸡翅">
 <meta property="og:description" content="进程与线程前言：理论知识1、什么是进程线程？java运行程序之后，会先启动JVM，JVM就是一个进程。 JVM启动主线程调用main方法，同时再启动一个垃圾回收线程负责看护，回收线程（这两个线程并发） 2、进程和线程关系？不同进程：进程A和进程B 内存独立不共享 不同线程：线程A和线程B， 堆内存 和 方法区 内存共享，但是 栈内存 独立，一个线程一个栈，当开启N个线程时，会有N个栈空间，每个栈之">
 <meta property="og:locale">
-<meta property="og:image" content="http://example.com/images/String%E5%9C%A8%E6%A0%88%E5%92%8C%E5%A0%86%E4%B8%AD%E7%9A%84%E5%86%85%E5%AD%98.png">
-<meta property="og:image" content="e:/typora/photo/image-20221117100655288.png">
-<meta property="og:image" content="e:/typora/photo/线程任务映射.jpg">
+<meta property="og:image" content="http://example.com/images/%E7%BA%BF%E7%A8%8B%E7%9F%A5%E8%AF%86/String%E5%9C%A8%E6%A0%88%E5%92%8C%E5%A0%86%E4%B8%AD%E7%9A%84%E5%86%85%E5%AD%98.png">
+<meta property="og:image" content="http://example.com/images/%E7%BA%BF%E7%A8%8B%E7%9F%A5%E8%AF%86/%E7%94%B5%E8%84%91%E6%A0%B8%E5%BF%83%E4%B8%8E%E7%BA%BF%E7%A8%8B.png">
+<meta property="og:image" content="http://example.com/images/%E7%BA%BF%E7%A8%8B%E7%9F%A5%E8%AF%86/%E7%BA%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1%E6%98%A0%E5%B0%84.jpg">
 <meta property="article:published_time" content="2022-12-14T06:14:46.721Z">
-<meta property="article:modified_time" content="2022-12-14T06:25:01.199Z">
+<meta property="article:modified_time" content="2022-12-14T06:35:08.136Z">
 <meta property="article:author" content="KD">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images/String%E5%9C%A8%E6%A0%88%E5%92%8C%E5%A0%86%E4%B8%AD%E7%9A%84%E5%86%85%E5%AD%98.png">
+<meta name="twitter:image" content="http://example.com/images/%E7%BA%BF%E7%A8%8B%E7%9F%A5%E8%AF%86/String%E5%9C%A8%E6%A0%88%E5%92%8C%E5%A0%86%E4%B8%AD%E7%9A%84%E5%86%85%E5%AD%98.png">
 
 
 
@@ -326,7 +326,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2022-12-14T14:25:01+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2022-12-14T14:35:08+08:00">
                 2022-12-14
               </time>
             
@@ -381,7 +381,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3.2k
+                  3.4k
                 </span>
               
 
@@ -423,7 +423,7 @@
 <h4 id="2、进程和线程关系？"><a href="#2、进程和线程关系？" class="headerlink" title="2、进程和线程关系？"></a>2、进程和线程关系？</h4><p>不同进程：进程A和进程B <strong>内存独立不共享</strong></p>
 <p>不同线程：线程A和线程B， <strong>堆内存</strong> 和 <strong>方法区</strong> 内存共享，但是 <strong>栈内存</strong> 独立，一个线程一个栈，当开启N个线程时，会有N个栈空间，每个栈之间互补干扰，各自执行，这就是 <strong>多线程并发</strong></p>
 <h4 id="3、真正的多线程并发"><a href="#3、真正的多线程并发" class="headerlink" title="3、真正的多线程并发"></a>3、真正的多线程并发</h4><p>t1线程执行t1的，t2线程执行t2的。t1不会影响t2，t2也不会影响t1，这叫做真正的多线程并发。</p>
-<h4 id="4、线程对象的生命周期"><a href="#4、线程对象的生命周期" class="headerlink" title="4、线程对象的生命周期"></a>4、线程对象的生命周期</h4><p><img src="/images/String%E5%9C%A8%E6%A0%88%E5%92%8C%E5%A0%86%E4%B8%AD%E7%9A%84%E5%86%85%E5%AD%98.png" alt="在这里插入图片描述"></p>
+<h4 id="4、线程对象的生命周期"><a href="#4、线程对象的生命周期" class="headerlink" title="4、线程对象的生命周期"></a>4、线程对象的生命周期</h4><p><img src="/images/%E7%BA%BF%E7%A8%8B%E7%9F%A5%E8%AF%86/String%E5%9C%A8%E6%A0%88%E5%92%8C%E5%A0%86%E4%B8%AD%E7%9A%84%E5%86%85%E5%AD%98.png" alt="String在栈和堆中的内存"></p>
 <h5 id="4-1-新建状态"><a href="#4-1-新建状态" class="headerlink" title="4.1 新建状态"></a>4.1 新建状态</h5><h5 id="4-2-就绪状态"><a href="#4-2-就绪状态" class="headerlink" title="4.2 就绪状态"></a>4.2 就绪状态</h5><h5 id="4-3-运行状态"><a href="#4-3-运行状态" class="headerlink" title="4.3 运行状态"></a>4.3 运行状态</h5><h5 id="4-4-阻塞状态"><a href="#4-4-阻塞状态" class="headerlink" title="4.4 阻塞状态"></a>4.4 阻塞状态</h5><h5 id="4-5-死亡状态"><a href="#4-5-死亡状态" class="headerlink" title="4.5 死亡状态"></a>4.5 死亡状态</h5><h2 id="1-创建线程"><a href="#1-创建线程" class="headerlink" title="1.创建线程"></a>1.创建线程</h2><h4 id="1-1继承Thread类"><a href="#1-1继承Thread类" class="headerlink" title="1.1继承Thread类"></a>1.1继承Thread类</h4><p>创建一个新的类，继承Thread类，然后创建一个该类实例。</p>
 <p>继承必须重写run()方法，是新线程的入口点。必须调用start()方法才能执行。</p>
 <p>被之上也是实现Runnable接口的一个实例。</p>
@@ -435,10 +435,10 @@
 
 
 
-<h1 id="2022-11-16学习多线程"><a href="#2022-11-16学习多线程" class="headerlink" title="2022.11.16学习多线程"></a>2022.11.16学习多线程</h1><h2 id="1-什么是线程、多线程？为什么用它？"><a href="#1-什么是线程、多线程？为什么用它？" class="headerlink" title="1.什么是线程、多线程？为什么用它？"></a>1.什么是线程、多线程？为什么用它？</h2><p>我们知道电脑有cpu，它有一个核心参数就是什么8核12线程、16核24线程，我们的计算机大多数只有一个cpu，8核的意思就是模拟出8个核心cpu，12线程表明其中有4个模拟的核心cpu同时拥有两条线程的处理能力，所以在同一时间最多可以有12个线程在处理任务，而我们的应用如QQ它会有非常多的线程，但是并不是所有的线程都会执行任务，很多挂在后台的线程都处于挂起的一个状态，而且当我们的线程不够用的时候，会开始时间片抢夺，我们的任务是交给了线程，然后在cpu中执行，这里就是在模拟的核心cpu中执行的。这就是线程和多线程。（我们打开任务管理器—&gt;性能-打开资源监视器，cpu栏可以看到我们具体有几个线程，我的电脑6核12线程的，表明有12个虚拟cpu在执行任务）<br><img src="E:\typora\photo\image-20221117100655288.png" alt="image-20221117100655288"></p>
+<h1 id="2022-11-16学习多线程"><a href="#2022-11-16学习多线程" class="headerlink" title="2022.11.16学习多线程"></a>2022.11.16学习多线程</h1><h2 id="1-什么是线程、多线程？为什么用它？"><a href="#1-什么是线程、多线程？为什么用它？" class="headerlink" title="1.什么是线程、多线程？为什么用它？"></a>1.什么是线程、多线程？为什么用它？</h2><p>我们知道电脑有cpu，它有一个核心参数就是什么8核12线程、16核24线程，我们的计算机大多数只有一个cpu，8核的意思就是模拟出8个核心cpu，12线程表明其中有4个模拟的核心cpu同时拥有两条线程的处理能力，所以在同一时间最多可以有12个线程在处理任务，而我们的应用如QQ它会有非常多的线程，但是并不是所有的线程都会执行任务，很多挂在后台的线程都处于挂起的一个状态，而且当我们的线程不够用的时候，会开始时间片抢夺，我们的任务是交给了线程，然后在cpu中执行，这里就是在模拟的核心cpu中执行的。这就是线程和多线程。（我们打开任务管理器—&gt;性能-打开资源监视器，cpu栏可以看到我们具体有几个线程，我的电脑6核12线程的，表明有12个虚拟cpu在执行任务）<br><img src="/images/%E7%BA%BF%E7%A8%8B%E7%9F%A5%E8%AF%86/%E7%94%B5%E8%84%91%E6%A0%B8%E5%BF%83%E4%B8%8E%E7%BA%BF%E7%A8%8B.png" alt="电脑核心与线程"></p>
 <p>一个线程只能存一个任务在cpu中执行，那如果有多个任务呢，如海量的数据请求我们就可以使用多线程来提高执行效率。而且我们的cpu不是一直都在工作的，发送请求会有网络时间开销，查询数据库会有磁盘IO处理时间开销，我们使用多线程也可以提高cpu的利用率。</p>
 <p>我们的任务是交给线程LWP（轻量级进程），它映射到内核线程KLT上，通过操纵调度器对线程进行调度，负责将线程映射到各个处理器上。</p>
-<p><img src="E:\typora\photo\线程任务映射.jpg" alt="线程任务映射"></p>
+<p><img src="/images/%E7%BA%BF%E7%A8%8B%E7%9F%A5%E8%AF%86/%E7%BA%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1%E6%98%A0%E5%B0%84.jpg" alt="线程任务映射"></p>
 <h2 id="2-并发和并行，上下文切换"><a href="#2-并发和并行，上下文切换" class="headerlink" title="2.并发和并行，上下文切换"></a>2.并发和并行，上下文切换</h2><p>并发：我们cpu只有一发，我们的线程就必须要抢夺时间片，就像是每个人抢夺首发一样，这就是并发</p>
 <p>并行：多个任务一并执行，这就意味着需要有多个cpu，线程在各自的cpu上执行，这就不需要抢夺时间片了，这就是并行</p>
 <p>我们在切换时间片的时候，我们</p>
