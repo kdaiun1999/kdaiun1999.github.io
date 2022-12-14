@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>多线程知识</title>
+    <url>/2022/12/14/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E7%BA%BF%E7%A8%8B%E7%9F%A5%E8%AF%86/</url>
+    <content><![CDATA[<h1 id="进程与线程"><a href="#进程与线程" class="headerlink" title="进程与线程"></a>进程与线程</h1><h2 id="前言：理论知识"><a href="#前言：理论知识" class="headerlink" title="前言：理论知识"></a>前言：理论知识</h2><h4 id="1、什么是进程线程？"><a href="#1、什么是进程线程？" class="headerlink" title="1、什么是进程线程？"></a>1、什么是进程线程？</h4><p>java运行程序之后，会先启动JVM，JVM就是一个进程。</p>
+<p>JVM启动主线程调用main方法，同时再启动一个垃圾回收线程负责看护，回收线程（这两个线程并发）</p>
+<h4 id="2、进程和线程关系？"><a href="#2、进程和线程关系？" class="headerlink" title="2、进程和线程关系？"></a>2、进程和线程关系？</h4><p>不同进程：进程A和进程B <strong>内存独立不共享</strong></p>
+<p>不同线程：线程A和线程B， <strong>堆内存</strong> 和 <strong>方法区</strong> 内存共享，但是 <strong>栈内存</strong> 独立，一个线程一个栈，当开启N个线程时，会有N个栈空间，每个栈之间互补干扰，各自执行，这就是 <strong>多线程并发</strong></p>
+<h4 id="3、真正的多线程并发"><a href="#3、真正的多线程并发" class="headerlink" title="3、真正的多线程并发"></a>3、真正的多线程并发</h4><p>t1线程执行t1的，t2线程执行t2的。t1不会影响t2，t2也不会影响t1，这叫做真正的多线程并发。</p>
+<h4 id="4、线程对象的生命周期"><a href="#4、线程对象的生命周期" class="headerlink" title="4、线程对象的生命周期"></a>4、线程对象的生命周期</h4><p><img src="D:\001_study_Java\01_Java基础\photo\String在栈和堆中的内存.png" alt="在这里插入图片描述"></p>
+<h5 id="4-1-新建状态"><a href="#4-1-新建状态" class="headerlink" title="4.1 新建状态"></a>4.1 新建状态</h5><h5 id="4-2-就绪状态"><a href="#4-2-就绪状态" class="headerlink" title="4.2 就绪状态"></a>4.2 就绪状态</h5><h5 id="4-3-运行状态"><a href="#4-3-运行状态" class="headerlink" title="4.3 运行状态"></a>4.3 运行状态</h5><h5 id="4-4-阻塞状态"><a href="#4-4-阻塞状态" class="headerlink" title="4.4 阻塞状态"></a>4.4 阻塞状态</h5><h5 id="4-5-死亡状态"><a href="#4-5-死亡状态" class="headerlink" title="4.5 死亡状态"></a>4.5 死亡状态</h5><h2 id="1-创建线程"><a href="#1-创建线程" class="headerlink" title="1.创建线程"></a>1.创建线程</h2><h4 id="1-1继承Thread类"><a href="#1-1继承Thread类" class="headerlink" title="1.1继承Thread类"></a>1.1继承Thread类</h4><p>创建一个新的类，继承Thread类，然后创建一个该类实例。</p>
+<p>继承必须重写run()方法，是新线程的入口点。必须调用start()方法才能执行。</p>
+<p>被之上也是实现Runnable接口的一个实例。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h1 id="2022-11-16学习多线程"><a href="#2022-11-16学习多线程" class="headerlink" title="2022.11.16学习多线程"></a>2022.11.16学习多线程</h1><h2 id="1-什么是线程、多线程？为什么用它？"><a href="#1-什么是线程、多线程？为什么用它？" class="headerlink" title="1.什么是线程、多线程？为什么用它？"></a>1.什么是线程、多线程？为什么用它？</h2><p>我们知道电脑有cpu，它有一个核心参数就是什么8核12线程、16核24线程，我们的计算机大多数只有一个cpu，8核的意思就是模拟出8个核心cpu，12线程表明其中有4个模拟的核心cpu同时拥有两条线程的处理能力，所以在同一时间最多可以有12个线程在处理任务，而我们的应用如QQ它会有非常多的线程，但是并不是所有的线程都会执行任务，很多挂在后台的线程都处于挂起的一个状态，而且当我们的线程不够用的时候，会开始时间片抢夺，我们的任务是交给了线程，然后在cpu中执行，这里就是在模拟的核心cpu中执行的。这就是线程和多线程。（我们打开任务管理器—&gt;性能-打开资源监视器，cpu栏可以看到我们具体有几个线程，我的电脑6核12线程的，表明有12个虚拟cpu在执行任务）<br><img src="E:\typora\photo\image-20221117100655288.png" alt="image-20221117100655288"></p>
+<p>一个线程只能存一个任务在cpu中执行，那如果有多个任务呢，如海量的数据请求我们就可以使用多线程来提高执行效率。而且我们的cpu不是一直都在工作的，发送请求会有网络时间开销，查询数据库会有磁盘IO处理时间开销，我们使用多线程也可以提高cpu的利用率。</p>
+<p>我们的任务是交给线程LWP（轻量级进程），它映射到内核线程KLT上，通过操纵调度器对线程进行调度，负责将线程映射到各个处理器上。</p>
+<p><img src="E:\typora\photo\线程任务映射.jpg" alt="线程任务映射"></p>
+<h2 id="2-并发和并行，上下文切换"><a href="#2-并发和并行，上下文切换" class="headerlink" title="2.并发和并行，上下文切换"></a>2.并发和并行，上下文切换</h2><p>并发：我们cpu只有一发，我们的线程就必须要抢夺时间片，就像是每个人抢夺首发一样，这就是并发</p>
+<p>并行：多个任务一并执行，这就意味着需要有多个cpu，线程在各自的cpu上执行，这就不需要抢夺时间片了，这就是并行</p>
+<p>我们在切换时间片的时候，我们</p>
+]]></content>
+      <categories>
+        <category>java基础</category>
+      </categories>
+  </entry>
+  <entry>
     <title>数据库基础</title>
     <url>/2022/12/14/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
     <content><![CDATA[<p>​        这里记录着自学的<strong>数据库</strong>基础知识，以及自己的深入理解</p>
