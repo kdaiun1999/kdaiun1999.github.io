@@ -988,8 +988,8 @@ JVM启动主线程调用main方法，同时再启动一个垃圾回收线程负�
           mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
           seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
           snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
-          document.getElementById("timeDate").innerHTML = "我和心心在一起 "+dnum+" 天啦！开心！ ";
-          document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+          document.getElementById("timeDate").innerHTML = "我和心心在一起 "+dnum+" 天 ";
+          document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒啦！好开心！";
       }
   setInterval("createtime()",250);
   </script>
