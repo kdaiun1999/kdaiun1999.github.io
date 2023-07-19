@@ -90,7 +90,7 @@
 <meta property="og:image" content="http://example.com/images/%E7%BA%BF%E7%A8%8B%E7%9F%A5%E8%AF%86/%E7%94%B5%E8%84%91%E6%A0%B8%E5%BF%83%E4%B8%8E%E7%BA%BF%E7%A8%8B.png">
 <meta property="og:image" content="http://example.com/images/%E7%BA%BF%E7%A8%8B%E7%9F%A5%E8%AF%86/%E7%BA%BF%E7%A8%8B%E4%BB%BB%E5%8A%A1%E6%98%A0%E5%B0%84.jpg">
 <meta property="article:published_time" content="2022-12-14T06:14:46.721Z">
-<meta property="article:modified_time" content="2023-02-28T02:47:02.135Z">
+<meta property="article:modified_time" content="2023-02-28T06:16:38.644Z">
 <meta property="article:author" content="KD">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/images/%E7%BA%BF%E7%A8%8B%E7%9F%A5%E8%AF%86/String%E5%9C%A8%E6%A0%88%E5%92%8C%E5%A0%86%E4%B8%AD%E7%9A%84%E5%86%85%E5%AD%98.png">
@@ -326,7 +326,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2023-02-28T10:47:02+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2023-02-28T14:16:38+08:00">
                 2023-02-28
               </time>
             
@@ -664,7 +664,7 @@
   <script>
       var now = new Date();
       function createtime() {
-          var grt= new Date("02/08/2023 20:00:00");
+          var grt= new Date("07/09/2023 00:00:00");
           now.setTime(now.getTime()+250);
           days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
           hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
@@ -672,8 +672,8 @@
           mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
           seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
           snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
-          document.getElementById("timeDate").innerHTML = "我和心心在一起 "+dnum+" 天 ";
-          document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒啦！好开心！";
+          document.getElementById("timeDate").innerHTML = "DK和LJ在一起 "+dnum+" 天 ";
+          document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒啦！";
       }
   setInterval("createtime()",250);
   </script>

@@ -323,7 +323,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2023-02-28T10:47:02+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2023-02-28T14:16:38+08:00">
                 2023-02-28
               </time>
             
@@ -980,7 +980,7 @@ JVM启动主线程调用main方法，同时再启动一个垃圾回收线程负�
   <script>
       var now = new Date();
       function createtime() {
-          var grt= new Date("02/08/2023 20:00:00");
+          var grt= new Date("07/09/2023 00:00:00");
           now.setTime(now.getTime()+250);
           days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
           hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
@@ -988,8 +988,8 @@ JVM启动主线程调用main方法，同时再启动一个垃圾回收线程负�
           mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
           seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
           snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
-          document.getElementById("timeDate").innerHTML = "我和心心在一起 "+dnum+" 天 ";
-          document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒啦！好开心！";
+          document.getElementById("timeDate").innerHTML = "DK和LJ在一起 "+dnum+" 天 ";
+          document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒啦！";
       }
   setInterval("createtime()",250);
   </script>
